@@ -69,7 +69,6 @@ private:
 				node_parent->keyvalue[i] = node_parent->keyvalue[i - 1];
 				node_parent->index[i] = node_parent->index[i - 1];
 				node_parent->pchild[i+1] = node_parent->pchild[i];
-				if(node_child->pchild[i] != nullptr)
 				node_child->pchild[i]->parent = node_parent->pchild[i];
 			}
 			node_parent->keyNum++;
@@ -147,7 +146,6 @@ private:
 			{
 				node = node->pchild[node->keyNum];
 			}
-			node->keyNum--;
 			n = node->index[node->keyNum - 1];
 			return node->keyvalue[node->keyNum - 1];
 		}
